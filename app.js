@@ -10,5 +10,5 @@
 // logGreeting(greet);
 
 // Module
-var a = require("./greet");
-a.greet();
+var g = import("./greet.js");
+console.log(g);
