@@ -19,7 +19,10 @@ var fs = require("fs");
 http
   .createServer(function (req, response) {
     response.writeHead(200, {"Content-type": "text/html"});
-    var html = fs.readFileSync(__dirname + "/index.html");
+    var html = fs.readFileSync(__dirname + "/index.html", "utf8");
+    var msg = "Hello World...";
+    html = html.replace("{Message}", msg);
+
     response.end(html);
   })
   .listen(1337, "127.0.0.1");
